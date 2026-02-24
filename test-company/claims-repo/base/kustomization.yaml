@@ -11,7 +11,7 @@ configMapGenerator:
   - name: claims-management-app-cm
     literals:
     -  artifactName="bpmn-poc.tar.gz"
-    -  artifactSha256="chaning claims in dev configmap-2"
+    -  artifactSha256="chaning claims in dev configmap-3"
     -  artifactUrl="abcd.efgh"
 
 patches:
