@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: claims-repo-appset
+  name: claims-repo-appset-new
 spec:
   generators:
     - list:
@@ -13,19 +13,16 @@ spec:
 
   template:
     metadata:
-      name: claims-{{branch}}
+      name: claims-kustomize-{{branch}}
     spec:
       project: default
       source:
-        repoURL: https://github.com/your-org/single-domain-repo-multenv-branch.git
+        repoURL: https://github.com/selflearner2025/single-domain-repo-multibranch-kustomize.git
         targetRevision: "{{branch}}"
-        path: test-company/*
+        path: test-company/claims-repo
       destination:
         server: https://kubernetes.default.svc
-        namespace: claims-shared
+        namespace: claims-shared-new
       syncPolicy:
         automated:
           prune: true
-          selfHeal: true
-      syncOptions:
-        - CreateNamespace=false
