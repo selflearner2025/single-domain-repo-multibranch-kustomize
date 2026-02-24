@@ -1,7 +1,15 @@
 resources:
   - job.yaml
-  - configmap.yaml
+#  - configmap.yaml
 
 namePrefix: dev-
 commonLabels:
   env: dev
+
+
+configMapGenerator:
+  - name: claims-management-app-cm
+    literals:
+    -  artifactName="bpmn-poc.tar.gz"
+    -  artifactSha256="chaning claims in dev configmap-1"
+    -  artifactUrl="abcd.efgh"
