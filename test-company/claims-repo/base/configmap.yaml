@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: claims-management-app
+data:
+  artifactName: bpmn-poc.tar.gz
+  artifactSha256: "chaning claims"
+  # command sha256sum bpmn-poc.tar.gz
+  artifactUrl: "abcd.efgh"

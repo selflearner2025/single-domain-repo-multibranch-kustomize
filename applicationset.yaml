@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: claims-repo-appset
+spec:
+  generators:
+    - list:
+        elements:
+          - branch: dev
+          - branch: qa
+        #  - branch: uat
+        #  - branch: prod#
+
+  template:
+    metadata:
+      name: claims-{{branch}}
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/your-org/single-domain-repo-multenv-branch.git
+        targetRevision: "{{branch}}"
+        path: test-company/*
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: claims-shared
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      syncOptions:
+        - CreateNamespace=false
