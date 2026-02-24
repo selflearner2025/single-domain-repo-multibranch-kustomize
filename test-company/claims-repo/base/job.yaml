@@ -23,7 +23,7 @@ spec:
           emptyDir: {}
         - name: artifact-info
           configMap:
-            name: claims-management-app-cm-qa
+            name: claims-management-app-cm
       containers:
         - name: downloader
           image: alpine:3.20
