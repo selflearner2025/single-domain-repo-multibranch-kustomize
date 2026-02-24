@@ -4,6 +4,8 @@ metadata:
   name: claims-management-app-job
   #generateName: camunda-bpmn-sync-poc
   annotations:
+  
+    argocd.argoproj.io/sync-wave: "0"
     argocd.argoproj.io/hook: Sync
     #delete hook before next sync
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
