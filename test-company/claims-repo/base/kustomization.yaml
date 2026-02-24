@@ -2,6 +2,6 @@ resources:
   - job.yaml
   - configmap.yaml
 
-namePrefix: dev-
+namePrefix: qa-
 commonLabels:
-  env: dev
+  env: qa
