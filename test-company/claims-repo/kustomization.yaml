@@ -1,0 +1,3 @@
+# test-company/claims-repo/kustomization.yaml
+resources:
+  - base/
