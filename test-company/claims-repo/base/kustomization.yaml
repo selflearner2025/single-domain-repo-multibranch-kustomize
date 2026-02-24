@@ -14,4 +14,7 @@ configMapGenerator:
     -  artifactSha256="chaning claims in qa configmap-3"
     -  artifactUrl="abcd.efgh"
 patches:
-  - path: add-secret-volume.yaml
+  - path: add-secret-to-job.yaml
+    target:
+      kind: Job
+      name: claims-management-app-job
